@@ -1,12 +1,43 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import GlitchBackground from '@/components/GlitchBackground';
+import VignetteOverlay from '@/components/VignetteOverlay';
+import Navigation from '@/components/Navigation';
+import HeroSection from '@/components/HeroSection';
+import IdentitySection from '@/components/IdentitySection';
+import ExecutionStack from '@/components/ExecutionStack';
+import FeaturedSystems from '@/components/FeaturedSystems';
+import ProcessSection from '@/components/ProcessSection';
+import TrustSection from '@/components/TrustSection';
+import ContactSection from '@/components/ContactSection';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="relative min-h-screen bg-background">
+      {/* Animated glitch background */}
+      <GlitchBackground opacity={0.12} speed={80} />
+      
+      {/* Vignette overlay for focus */}
+      <VignetteOverlay />
+      
+      {/* Scanline effect */}
+      <div className="fixed inset-0 pointer-events-none z-[2] scanlines opacity-30" />
+
+      {/* Navigation */}
+      <Navigation />
+
+      {/* Main content */}
+      <main>
+        <HeroSection />
+        <IdentitySection />
+        <ExecutionStack />
+        <FeaturedSystems />
+        <ProcessSection />
+        <TrustSection />
+        <ContactSection />
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
