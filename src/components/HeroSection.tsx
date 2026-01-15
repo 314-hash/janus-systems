@@ -1,4 +1,5 @@
 import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import profileImage from '@/assets/profile.png';
 
 const HeroSection = () => {
   return (
@@ -6,6 +7,21 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 section-container text-center">
         <div className="max-w-4xl mx-auto reveal-stagger">
+          {/* Profile Image */}
+          <div className="mb-8 flex justify-center">
+            <div className="relative">
+              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-primary/50 ring-4 ring-primary/20">
+                <img
+                  src={profileImage}
+                  alt="Extropian Janus - Web3 Founding CTO"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
+              {/* Glow effect */}
+              <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl -z-10" />
+            </div>
+          </div>
+
           {/* Status badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 backdrop-blur-sm mb-8">
             <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
@@ -53,7 +69,7 @@ const HeroSection = () => {
           {/* Social links */}
           <div className="flex items-center justify-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/314-hash"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -62,7 +78,7 @@ const HeroSection = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/blockchaindeveloper2025/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
