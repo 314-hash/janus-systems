@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
+
 const ProcessSection = () => {
   const steps = [
     {
@@ -36,7 +39,7 @@ const ProcessSection = () => {
     <section id="process" className="relative z-10">
       <div className="section-container">
         {/* Section header */}
-        <div className="mb-16">
+        <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
             /04 How I Build
           </span>
@@ -46,42 +49,63 @@ const ProcessSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl">
             Building blockchain infrastructure requires understanding how things break. This process has been refined through real production deployments.
           </p>
-        </div>
+        </MotionSection>
 
         {/* Process steps */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
           {steps.map((step, index) => (
-            <div
-              key={index}
-              className="group relative p-6 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300"
-            >
-              {/* Step number */}
-              <span className="text-5xl font-bold text-muted/20 font-mono mb-4 block group-hover:text-primary/20 transition-colors">
-                {step.number}
-              </span>
-              
-              {/* Content */}
-              <h3 className="text-lg font-semibold text-foreground mb-3">
-                {step.title}
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                {step.description}
-              </p>
+            <StaggerItem key={index}>
+              <motion.div
+                className="group relative p-6 rounded-xl bg-card border border-border h-full"
+                whileHover={{ 
+                  borderColor: 'hsl(var(--primary) / 0.4)',
+                  y: -8,
+                  boxShadow: '0 20px 40px -20px hsl(var(--primary) / 0.2)'
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Step number */}
+                <motion.span 
+                  className="text-5xl font-bold text-muted/20 font-mono mb-4 block"
+                  whileHover={{ color: 'hsl(var(--primary) / 0.3)' }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {step.number}
+                </motion.span>
+                
+                {/* Content */}
+                <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {step.description}
+                </p>
 
-              {/* Connecting line for larger screens */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-gradient-to-r from-border to-transparent" />
-              )}
-            </div>
+                {/* Connecting line for larger screens */}
+                {index < steps.length - 1 && index !== 2 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-px bg-gradient-to-r from-border to-transparent" />
+                )}
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
 
         {/* Bottom note */}
-        <div className="mt-12 p-6 rounded-xl border border-primary/20 bg-primary/5">
-          <p className="text-sm text-muted-foreground text-center font-mono">
-            "This person knows how things break."
-          </p>
-        </div>
+        <MotionSection delay={0.5} className="mt-12">
+          <motion.div 
+            className="p-6 rounded-xl border border-primary/20 bg-primary/5"
+            whileHover={{ 
+              borderColor: 'hsl(var(--primary) / 0.4)',
+              backgroundColor: 'hsl(var(--primary) / 0.08)'
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <p className="text-sm text-muted-foreground text-center font-mono">
+              "This person knows how things break."
+            </p>
+          </motion.div>
+        </MotionSection>
       </div>
     </section>
   );
