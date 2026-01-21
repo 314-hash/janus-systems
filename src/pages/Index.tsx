@@ -8,6 +8,7 @@ import FeaturedSystems from '@/components/FeaturedSystems';
 import ProcessSection from '@/components/ProcessSection';
 import TrustSection from '@/components/TrustSection';
 import ContactSection from '@/components/ContactSection';
+import ChatbotSection from '@/components/ChatbotSection';
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -33,6 +34,7 @@ const Index = () => {
         <FeaturedSystems />
         <ProcessSection />
         <TrustSection />
+        <ChatbotSection />
         <ContactSection />
       </main>
 
