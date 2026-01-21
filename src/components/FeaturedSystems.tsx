@@ -1,4 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
 
 const FeaturedSystems = () => {
   const systems = [
@@ -128,7 +130,7 @@ const FeaturedSystems = () => {
     <section id="systems" className="relative z-10">
       <div className="section-container">
         {/* Section header */}
-        <div className="mb-16">
+        <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
             /03 Featured Systems
           </span>
@@ -138,75 +140,99 @@ const FeaturedSystems = () => {
           <p className="text-muted-foreground text-lg max-w-2xl">
             Systems designed for production. No hackathon demos. Each represents months of careful architecture and execution.
           </p>
-        </div>
+        </MotionSection>
 
         {/* Systems grid */}
-        <div className="grid gap-6 md:gap-8">
+        <StaggerContainer className="grid gap-6 md:gap-8" staggerDelay={0.08}>
           {systems.map((system, index) => (
-            <a
-              key={index}
-              href={system.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative p-6 md:p-8 rounded-xl bg-card border border-border hover:border-primary/30 transition-all duration-300 block cursor-pointer"
-            >
-              {/* Number */}
-              <span className="absolute top-6 right-6 text-4xl md:text-6xl font-bold text-muted/20 font-mono select-none">
-                {String(index + 1).padStart(2, '0')}
-              </span>
+            <StaggerItem key={index}>
+              <motion.a
+                href={system.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative p-6 md:p-8 rounded-xl bg-card border border-border block cursor-pointer overflow-hidden"
+                whileHover={{ 
+                  borderColor: 'hsl(var(--primary) / 0.4)',
+                  y: -4,
+                  boxShadow: '0 20px 40px -20px hsl(var(--primary) / 0.3)'
+                }}
+                whileTap={{ scale: 0.995 }}
+                transition={{ duration: 0.3 }}
+              >
+                {/* Hover gradient overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 opacity-0"
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                />
 
-              {/* Content */}
-              <div className="relative">
-                <div className="flex items-start gap-3 mb-6 pr-16">
-                  <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {system.title}
-                  </h3>
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
-                </div>
+                {/* Number */}
+                <motion.span 
+                  className="absolute top-6 right-6 text-4xl md:text-6xl font-bold text-muted/20 font-mono select-none"
+                  whileHover={{ color: 'hsl(var(--primary) / 0.2)', scale: 1.1 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {String(index + 1).padStart(2, '0')}
+                </motion.span>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
-                        Problem
-                      </h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {system.problem}
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
-                        System Architecture
-                      </h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {system.architecture}
-                      </p>
-                    </div>
+                {/* Content */}
+                <div className="relative">
+                  <div className="flex items-start gap-3 mb-6 pr-16">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {system.title}
+                    </h3>
+                    <motion.div
+                      whileHover={{ x: 4, y: -4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+                    </motion.div>
                   </div>
 
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
-                        Execution Role
-                      </h4>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {system.role}
-                      </p>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
+                          Problem
+                        </h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {system.problem}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
+                          System Architecture
+                        </h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {system.architecture}
+                        </p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-xs font-mono text-secondary uppercase tracking-wider mb-1.5">
-                        Outcome
-                      </h4>
-                      <p className="text-foreground text-sm font-medium leading-relaxed">
-                        {system.outcome}
-                      </p>
+
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-xs font-mono text-primary uppercase tracking-wider mb-1.5">
+                          Execution Role
+                        </h4>
+                        <p className="text-muted-foreground text-sm leading-relaxed">
+                          {system.role}
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-mono text-secondary uppercase tracking-wider mb-1.5">
+                          Outcome
+                        </h4>
+                        <p className="text-foreground text-sm font-medium leading-relaxed">
+                          {system.outcome}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </motion.a>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );
