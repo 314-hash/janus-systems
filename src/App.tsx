@@ -6,20 +6,46 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
+// 👇 import the video from src/assets (Vite-safe)
+import exVideo from "@/assets/ex.mp4";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+
+      {/* 🎥 Background Video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        aria-hidden
+        className="
+          fixed inset-0 w-full h-full object-cover
+          -z-10
+          opacity-0 animate-fadeIn
+          motion-reduce:hidden
+        "
+      >
+        <source src={exVideo} type="video/mp4" />
+      </video>
+
+      {/* 🌑 Overlay for contrast */}
+      <div className="fixed inset-0 bg-black/50 -z-10" />
+
       <Toaster />
       <Sonner />
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+
     </TooltipProvider>
   </QueryClientProvider>
 );
