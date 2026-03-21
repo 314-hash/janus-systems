@@ -92,8 +92,8 @@ const AnimatedWebsites = () => {
                 <div className="relative bg-muted/50 border-b border-border px-4 py-2.5 flex items-center gap-2">
                   <div className="flex gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-destructive/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/60" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-green-500/60" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-primary/40" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-secondary/60" />
                   </div>
                   <div className="flex-1 flex items-center gap-2 ml-3 px-3 py-1 rounded-md bg-background/60 text-xs font-mono text-muted-foreground truncate">
                     <Globe className="w-3 h-3 flex-shrink-0" />
