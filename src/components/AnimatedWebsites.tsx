@@ -2,13 +2,21 @@ import { ArrowUpRight, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
 
+import smMallOfAsia from '@/assets/screenshots/sm-mall-of-asia.png';
+import hiromitsuRestaurant from '@/assets/screenshots/hiromitsu-restaurant.png';
+import makiSushiRolls from '@/assets/screenshots/maki-sushi-rolls.png';
+import ninevehAcademy from '@/assets/screenshots/nineveh-academy.png';
+import graceValderama from '@/assets/screenshots/grace-valderama-agent.png';
+import papaPares from '@/assets/screenshots/papa-pares.png';
+import jonutsDonuts from '@/assets/screenshots/jonuts-donuts.png';
+
 const websites = [
   {
     title: 'SM Mall of Asia',
     url: 'https://sm-mall-of-asia.vercel.app/',
     category: 'Retail & Commerce',
     description: 'Luxury retail destination website with interactive store directory, immersive experience showcases, and elegant wayfinding for 342+ boutiques.',
-    screenshot: 'tool-results://fetched-websites/sm-mall-of-asia.vercel.app.png',
+    screenshot: smMallOfAsia,
   },
   {
     title: 'Hiromitsu Restaurant',
