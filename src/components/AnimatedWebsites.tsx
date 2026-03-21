@@ -2,49 +2,63 @@ import { ArrowUpRight, Globe } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
 
+import smMallOfAsia from '@/assets/screenshots/sm-mall-of-asia.png';
+import hiromitsuRestaurant from '@/assets/screenshots/hiromitsu-restaurant.png';
+import makiSushiRolls from '@/assets/screenshots/maki-sushi-rolls.png';
+import ninevehAcademy from '@/assets/screenshots/nineveh-academy.png';
+import graceValderama from '@/assets/screenshots/grace-valderama-agent.png';
+import papaPares from '@/assets/screenshots/papa-pares.png';
+import jonutsDonuts from '@/assets/screenshots/jonuts-donuts.png';
+
 const websites = [
   {
     title: 'SM Mall of Asia',
     url: 'https://sm-mall-of-asia.vercel.app/',
     category: 'Retail & Commerce',
     description: 'Luxury retail destination website with interactive store directory, immersive experience showcases, and elegant wayfinding for 342+ boutiques.',
-    screenshot: 'tool-results://fetched-websites/sm-mall-of-asia.vercel.app.png',
+    screenshot: smMallOfAsia,
   },
   {
     title: 'Hiromitsu Restaurant',
     url: 'https://hiromitsu-restaurant.vercel.app/',
     category: 'Food & Dining',
     description: 'Authentic Japanese restaurant site with full menu system, table reservations, delivery ordering, and a warm lantern-lit visual atmosphere.',
+    screenshot: hiromitsuRestaurant,
   },
   {
     title: 'Maki Sushi Rolls',
     url: 'https://maki-sushi-rolls.vercel.app/',
     category: 'Food & Dining',
     description: 'Sushi restaurant website featuring chef\'s specials, categorized menu with bento & donburi, and an immersive ordering experience.',
+    screenshot: makiSushiRolls,
   },
   {
     title: 'Nineveh Academy',
     url: 'https://nineveh-academy.vercel.app/',
     category: 'Education',
     description: 'Christ-centered educational institution site covering Preschool to Senior High School programs with enrollment system and campus gallery.',
+    screenshot: ninevehAcademy,
   },
   {
     title: 'Grace Valderama Agent',
     url: 'https://grace-valderama-agent.vercel.app/',
     category: 'Real Estate',
     description: 'Professional house locator agent portfolio with property listings integration, booking system, and Messenger-based client communication.',
+    screenshot: graceValderama,
   },
   {
     title: 'Papa Pares',
     url: 'https://papa-pares.vercel.app/',
     category: 'Food & Dining',
     description: 'Bold, street-food-forward restaurant site for a Filipino pares house — featuring menu highlights, customer reviews, and location info.',
+    screenshot: papaPares,
   },
   {
     title: 'Jonuts Donuts',
     url: 'https://jonuts-donuts.vercel.app/',
     category: 'Food & Dining',
     description: 'Proudly Filipino donut brand site with handcrafted menu, box builder experience, and vibrant branding — 100% original recipe showcase.',
+    screenshot: jonutsDonuts,
   },
 ];
 
@@ -101,27 +115,17 @@ const AnimatedWebsites = () => {
                   </div>
                 </div>
 
-                {/* Screenshot area with gradient overlay */}
+                {/* Screenshot area */}
                 <div className="relative h-44 bg-muted/30 overflow-hidden">
-                  {/* Animated scan line */}
-                  <motion.div
-                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
-                    animate={{ y: [0, 176, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                  />
-                  
-                  {/* Placeholder grid pattern */}
-                  <div className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
-                    }}
+                  <img
+                    src={site.screenshot}
+                    alt={site.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
 
-                  {/* Number overlay */}
-                  <span className="absolute bottom-3 right-4 text-5xl font-bold text-muted/15 font-mono select-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Hover arrow */}
                   <motion.div
