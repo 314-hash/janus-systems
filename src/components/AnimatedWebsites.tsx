@@ -115,27 +115,17 @@ const AnimatedWebsites = () => {
                   </div>
                 </div>
 
-                {/* Screenshot area with gradient overlay */}
+                {/* Screenshot area */}
                 <div className="relative h-44 bg-muted/30 overflow-hidden">
-                  {/* Animated scan line */}
-                  <motion.div
-                    className="absolute inset-x-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"
-                    animate={{ y: [0, 176, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                  />
-                  
-                  {/* Placeholder grid pattern */}
-                  <div className="absolute inset-0 opacity-10"
-                    style={{
-                      backgroundImage: 'linear-gradient(hsl(var(--primary) / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary) / 0.3) 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
-                    }}
+                  <img
+                    src={site.screenshot}
+                    alt={site.title}
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    loading="lazy"
                   />
 
-                  {/* Number overlay */}
-                  <span className="absolute bottom-3 right-4 text-5xl font-bold text-muted/15 font-mono select-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   {/* Hover arrow */}
                   <motion.div
