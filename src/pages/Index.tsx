@@ -33,6 +33,7 @@ const Index = () => {
         <IdentitySection />
         <ExecutionStack />
         <FeaturedSystems />
+        <AnimatedWebsites />
         <ProcessSection />
         <TrustSection />
         <ChatbotSection />
