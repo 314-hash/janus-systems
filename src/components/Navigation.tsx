@@ -16,6 +16,7 @@ const Navigation = () => {
     { href: '#identity', label: 'Identity' },
     { href: '#stack', label: 'Stack' },
     { href: '#systems', label: 'Systems' },
+    { href: '#websites', label: 'Websites' },
     { href: '#process', label: 'Process' },
     { href: '#contact', label: 'Contact' },
   ];

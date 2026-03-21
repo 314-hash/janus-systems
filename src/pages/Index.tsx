@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import IdentitySection from '@/components/IdentitySection';
 import ExecutionStack from '@/components/ExecutionStack';
 import FeaturedSystems from '@/components/FeaturedSystems';
+import AnimatedWebsites from '@/components/AnimatedWebsites';
 import ProcessSection from '@/components/ProcessSection';
 import TrustSection from '@/components/TrustSection';
 import ContactSection from '@/components/ContactSection';
@@ -32,6 +33,7 @@ const Index = () => {
         <IdentitySection />
         <ExecutionStack />
         <FeaturedSystems />
+        <AnimatedWebsites />
         <ProcessSection />
         <TrustSection />
         <ChatbotSection />
