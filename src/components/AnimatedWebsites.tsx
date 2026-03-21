@@ -23,36 +23,42 @@ const websites = [
     url: 'https://hiromitsu-restaurant.vercel.app/',
     category: 'Food & Dining',
     description: 'Authentic Japanese restaurant site with full menu system, table reservations, delivery ordering, and a warm lantern-lit visual atmosphere.',
+    screenshot: hiromitsuRestaurant,
   },
   {
     title: 'Maki Sushi Rolls',
     url: 'https://maki-sushi-rolls.vercel.app/',
     category: 'Food & Dining',
     description: 'Sushi restaurant website featuring chef\'s specials, categorized menu with bento & donburi, and an immersive ordering experience.',
+    screenshot: makiSushiRolls,
   },
   {
     title: 'Nineveh Academy',
     url: 'https://nineveh-academy.vercel.app/',
     category: 'Education',
     description: 'Christ-centered educational institution site covering Preschool to Senior High School programs with enrollment system and campus gallery.',
+    screenshot: ninevehAcademy,
   },
   {
     title: 'Grace Valderama Agent',
     url: 'https://grace-valderama-agent.vercel.app/',
     category: 'Real Estate',
     description: 'Professional house locator agent portfolio with property listings integration, booking system, and Messenger-based client communication.',
+    screenshot: graceValderama,
   },
   {
     title: 'Papa Pares',
     url: 'https://papa-pares.vercel.app/',
     category: 'Food & Dining',
     description: 'Bold, street-food-forward restaurant site for a Filipino pares house — featuring menu highlights, customer reviews, and location info.',
+    screenshot: papaPares,
   },
   {
     title: 'Jonuts Donuts',
     url: 'https://jonuts-donuts.vercel.app/',
     category: 'Food & Dining',
     description: 'Proudly Filipino donut brand site with handcrafted menu, box builder experience, and vibrant branding — 100% original recipe showcase.',
+    screenshot: jonutsDonuts,
   },
 ];
 
