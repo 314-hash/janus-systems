@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { Send, Github, Linkedin, Mail } from 'lucide-react';
+import { Send, Github, Linkedin, Mail, MessageCircle, Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { MotionSection } from './ui/motion';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 const ContactSection = () => {
   const [formState, setFormState] = useState({
@@ -9,11 +11,36 @@ const ContactSection = () => {
     email: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formState);
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formState,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
+
+      setFormState({ name: '', email: '', message: '' });
+    } catch (error: any) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Failed to send",
+        description: "Something went wrong. Please try again or reach out directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -102,17 +129,38 @@ const ContactSection = () => {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                 <motion.button
                   type="submit"
-                  className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg transition-all glow-primary w-full sm:w-auto justify-center"
+                  disabled={isSubmitting}
+                  className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-medium rounded-lg transition-all glow-primary w-full sm:w-auto justify-center disabled:opacity-50"
                   whileHover={{ scale: 1.05, boxShadow: '0 0 30px hsl(var(--primary) / 0.5)' }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Send Message
-                  <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  {isSubmitting ? (
+                    <>
+                      Sending...
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
                 </motion.button>
                 
                 {/* Social links */}
                 <div className="flex items-center gap-4">
                   <span className="text-sm text-muted-foreground">Or connect via:</span>
+                  <motion.a
+                    href="https://wa.me/639933966177"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-lg border border-border hover:border-green-500/50 hover:bg-card transition-all"
+                    aria-label="WhatsApp"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <MessageCircle className="w-5 h-5 text-muted-foreground hover:text-green-400 transition-colors" />
+                  </motion.a>
                   <motion.a
                     href="https://github.com/314-hash"
                     target="_blank"
@@ -136,7 +184,7 @@ const ContactSection = () => {
                     <Linkedin className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
                   </motion.a>
                   <motion.a
-                    href="mailto:contact@extropianjanus.io"
+                    href="mailto:janlad2025@gmail.com"
                     className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-card transition-all"
                     aria-label="Email"
                     whileHover={{ scale: 1.1, y: -2 }}
