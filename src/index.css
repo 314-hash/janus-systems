@@ -76,6 +76,13 @@
     font-family: var(--font-body);
   }
 
+  /* Hide default cursor on non-touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    *, *::before, *::after {
+      cursor: none !important;
+    }
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
   }
