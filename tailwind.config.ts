@@ -116,6 +116,27 @@ export default {
           "0%": { transform: "translateY(-100%)" },
           "100%": { transform: "translateY(100%)" },
         },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "border-rotate": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
+        "text-flicker": {
+          "0%, 100%": { opacity: "1", textShadow: "0 0 4px hsl(var(--primary) / 0.6)" },
+          "50%": { opacity: "0.85", textShadow: "0 0 20px hsl(var(--primary) / 0.9), 0 0 40px hsl(var(--primary) / 0.3)" },
+        },
+        "rotate-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "morph": {
+          "0%, 100%": { borderRadius: "60% 40% 30% 70% / 60% 30% 70% 40%" },
+          "50%": { borderRadius: "30% 60% 70% 40% / 50% 60% 30% 60%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -126,6 +147,11 @@ export default {
         "glitch-shift": "glitch-shift 3s infinite linear alternate-reverse",
         "reveal-up": "reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "scan": "scan 8s linear infinite",
+        "shimmer": "shimmer 3s ease-in-out infinite",
+        "border-rotate": "border-rotate 3s ease infinite",
+        "text-flicker": "text-flicker 4s ease-in-out infinite",
+        "rotate-slow": "rotate-slow 20s linear infinite",
+        "morph": "morph 8s ease-in-out infinite",
       },
     },
   },

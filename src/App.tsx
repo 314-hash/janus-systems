@@ -39,6 +39,7 @@ const App = () => (
 
       <Toaster />
       <Sonner />
+      <CustomCursor />
 
       <BrowserRouter>
         <Routes>
