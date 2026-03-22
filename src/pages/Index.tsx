@@ -35,6 +35,7 @@ const Index = () => {
         <ExecutionStack />
         <FeaturedSystems />
         <AnimatedWebsites />
+        <GraphicDesignSection />
         <ProcessSection />
         <TrustSection />
         <ContactSection />
