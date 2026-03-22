@@ -184,7 +184,7 @@ const ContactSection = () => {
                     <Linkedin className="w-5 h-5 text-muted-foreground hover:text-foreground transition-colors" />
                   </motion.a>
                   <motion.a
-                    href="mailto:janlad2025@gmail.com"
+                    href="mailto:janlad2025@mail.com"
                     className="p-3 rounded-lg border border-border hover:border-primary/50 hover:bg-card transition-all"
                     aria-label="Email"
                     whileHover={{ scale: 1.1, y: -2 }}
