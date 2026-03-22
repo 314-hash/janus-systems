@@ -36,9 +36,11 @@ const Index = () => {
         <AnimatedWebsites />
         <ProcessSection />
         <TrustSection />
-        <ChatbotSection />
         <ContactSection />
       </main>
+
+      {/* Floating chatbot widget */}
+      <ChatbotSection />
 
       {/* Footer */}
       <Footer />
