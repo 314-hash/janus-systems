@@ -6,6 +6,7 @@ import IdentitySection from '@/components/IdentitySection';
 import ExecutionStack from '@/components/ExecutionStack';
 import FeaturedSystems from '@/components/FeaturedSystems';
 import AnimatedWebsites from '@/components/AnimatedWebsites';
+import GraphicDesignSection from '@/components/GraphicDesignSection';
 import ProcessSection from '@/components/ProcessSection';
 import TrustSection from '@/components/TrustSection';
 import ContactSection from '@/components/ContactSection';
@@ -34,6 +35,7 @@ const Index = () => {
         <ExecutionStack />
         <FeaturedSystems />
         <AnimatedWebsites />
+        <GraphicDesignSection />
         <ProcessSection />
         <TrustSection />
         <ContactSection />
