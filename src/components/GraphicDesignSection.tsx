@@ -130,11 +130,15 @@ const designs = [
 ];
 
 const GraphicDesignSection = () => {
+  const [activeTab, setActiveTab] = useState<'all' | 'book-cover' | 'brand-logo'>('all');
+
+  const filteredDesigns = activeTab === 'all' ? designs : designs.filter(d => d.category === activeTab);
+
   return (
     <section id="graphic-design" className="relative z-10">
       <div className="section-container">
         {/* Section header */}
-        <MotionSection className="mb-16">
+        <MotionSection className="mb-10">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
             /05 Graphic Design & AI Prompt Engineering
           </span>
@@ -152,14 +156,44 @@ const GraphicDesignSection = () => {
             </span>
           </div>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Book covers and visual designs crafted through expert AI prompt engineering — merging creative direction with cutting-edge generative tools.
+            Book covers, brand logos, and visual designs crafted through expert AI prompt engineering — merging creative direction with cutting-edge generative tools.
           </p>
         </MotionSection>
 
+        {/* Category tabs */}
+        <div className="flex gap-2 mb-8">
+          {[
+            { key: 'all', label: 'All', icon: Sparkles },
+            { key: 'book-cover', label: 'Book Covers', icon: BookOpen },
+            { key: 'brand-logo', label: 'Brand Logos', icon: Crown },
+          ].map(({ key, label, icon: Icon }) => (
+            <button
+              key={key}
+              onClick={() => setActiveTab(key as typeof activeTab)}
+              className={`inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider px-4 py-2 rounded-full border transition-all duration-300 ${
+                activeTab === key
+                  ? 'bg-primary/20 text-primary border-primary/40'
+                  : 'bg-card/40 text-muted-foreground border-border hover:border-primary/30 hover:text-foreground'
+              }`}
+            >
+              <Icon className="w-3 h-3" />
+              {label}
+            </button>
+          ))}
+        </div>
+
         {/* Designs grid */}
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-5 md:gap-6" staggerDelay={0.1}>
-          {designs.map((design, index) => (
-            <StaggerItem key={index}>
+        <StaggerContainer
+          key={activeTab}
+          className={`grid gap-5 md:gap-6 ${
+            activeTab === 'brand-logo'
+              ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
+              : 'grid-cols-2 md:grid-cols-3'
+          }`}
+          staggerDelay={0.08}
+        >
+          {filteredDesigns.map((design, index) => (
+            <StaggerItem key={design.title}>
               <motion.div
                 className="group relative rounded-xl overflow-hidden bg-card border border-border cursor-pointer"
                 whileHover={{
@@ -169,16 +203,15 @@ const GraphicDesignSection = () => {
                 whileTap={{ scale: 0.97 }}
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
-                {/* Image */}
-                <div className="relative aspect-[2/3] overflow-hidden">
+                <div className={`relative overflow-hidden ${
+                  design.category === 'brand-logo' ? 'aspect-square' : 'aspect-[2/3]'
+                }`}>
                   <img
                     src={design.image}
                     alt={design.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
                   />
-
-                  {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                     <h3 className="text-base md:text-lg font-bold text-foreground mb-1">
                       {design.title}
