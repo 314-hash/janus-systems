@@ -9,6 +9,8 @@ import ninevehAcademy from '@/assets/screenshots/nineveh-academy.png';
 import graceValderama from '@/assets/screenshots/grace-valderama-agent.png';
 import papaPares from '@/assets/screenshots/papa-pares.png';
 import jonutsDonuts from '@/assets/screenshots/jonuts-donuts.png';
+import kamuningsHaloHalo from '@/assets/screenshots/kamunings-halo-halo.png';
+import khiferOfficialVlog from '@/assets/screenshots/khifer-official-vlog.png';
 
 const websites = [
   {
