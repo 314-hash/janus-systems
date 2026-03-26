@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,49 +8,63 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CustomCursor from "./components/CustomCursor";
 
-// 👇 import the video from src/assets (Vite-safe)
-import exVideo from "@/assets/ex.mp4";
+// 🎵 Audio
+import music from "@/assets/jan.mp3.mp3";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+const App = () => {
+  const audioRef = useRef(null);
+  const hasPlayed = useRef(false);
 
-      {/* 🎥 Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden
-        className="
-          fixed inset-0 w-full h-full object-cover
-          -z-10
-          opacity-0 animate-fadeIn
-          motion-reduce:hidden
-        "
-      >
-        <source src={exVideo} type="video/mp4" />
-      </video>
+  useEffect(() => {
+    const playAudio = () => {
+      if (hasPlayed.current) return;
 
-      {/* 🌑 Overlay for contrast */}
-      <div className="fixed inset-0 bg-black/50 -z-10" />
+      const audio = audioRef.current;
+      if (audio) {
+        audio.volume = 0.4;
+        audio.play().catch(() => {});
+      }
 
-      <Toaster />
-      <Sonner />
-      <CustomCursor />
+      hasPlayed.current = true;
 
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      window.removeEventListener("click", playAudio);
+    };
 
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    window.addEventListener("click", playAudio);
+
+    return () => {
+      window.removeEventListener("click", playAudio);
+    };
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+
+        {/* 🎵 Looping Music */}
+        <audio ref={audioRef} loop preload="auto">
+          <source src={music} type="audio/mpeg" />
+        </audio>
+
+        {/* 🌑 Background Overlay (optional, keeps dark aesthetic) */}
+        <div className="fixed inset-0 bg-black -z-10" />
+
+        <Toaster />
+        <Sonner />
+        <CustomCursor />
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
