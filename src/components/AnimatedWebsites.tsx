@@ -83,6 +83,7 @@ const categoryColors: Record<string, string> = {
   'Food & Dining': 'bg-secondary/20 text-secondary',
   'Education': 'bg-accent/20 text-accent-foreground',
   'Real Estate': 'bg-muted text-muted-foreground',
+  'Entertainment': 'bg-destructive/20 text-destructive',
 };
 
 const AnimatedWebsites = () => {
