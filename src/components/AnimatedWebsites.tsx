@@ -9,6 +9,8 @@ import ninevehAcademy from '@/assets/screenshots/nineveh-academy.png';
 import graceValderama from '@/assets/screenshots/grace-valderama-agent.png';
 import papaPares from '@/assets/screenshots/papa-pares.png';
 import jonutsDonuts from '@/assets/screenshots/jonuts-donuts.png';
+import kamuningsHaloHalo from '@/assets/screenshots/kamunings-halo-halo.png';
+import khiferOfficialVlog from '@/assets/screenshots/khifer-official-vlog.png';
 
 const websites = [
   {
@@ -60,6 +62,20 @@ const websites = [
     description: 'Proudly Filipino donut brand site with handcrafted menu, box builder experience, and vibrant branding — 100% original recipe showcase.',
     screenshot: jonutsDonuts,
   },
+  {
+    title: "Ka Muning's Halo-Halo",
+    url: 'https://kamunings-halo-halo.vercel.app/',
+    category: 'Food & Dining',
+    description: 'Warm, inviting café website for a Filipino halo-halo shop — featuring full menu, online ordering, gallery, and visit info.',
+    screenshot: kamuningsHaloHalo,
+  },
+  {
+    title: 'Khifer Official Vlog',
+    url: 'https://khifer-official-vlog.vercel.app/',
+    category: 'Entertainment',
+    description: 'Content creator hub for a 1.6M+ subscriber YouTuber — with video showcases, social links, and subscriber engagement features.',
+    screenshot: khiferOfficialVlog,
+  },
 ];
 
 const categoryColors: Record<string, string> = {
@@ -67,6 +83,7 @@ const categoryColors: Record<string, string> = {
   'Food & Dining': 'bg-secondary/20 text-secondary',
   'Education': 'bg-accent/20 text-accent-foreground',
   'Real Estate': 'bg-muted text-muted-foreground',
+  'Entertainment': 'bg-destructive/20 text-destructive',
 };
 
 const AnimatedWebsites = () => {
