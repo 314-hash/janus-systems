@@ -8,6 +8,17 @@ import lawsDuality from '@/assets/designs/laws-duality.png';
 import goldenJudgement from '@/assets/designs/golden-judgement.png';
 import midnightQuill from '@/assets/designs/midnight-quill.png';
 import stopPower from '@/assets/designs/stop-power.png';
+import cryptoSisig from '@/assets/designs/crypto-sisig.png';
+import cannavendex from '@/assets/designs/cannavendex.png';
+import kgpFounding from '@/assets/designs/kgp-founding.png';
+import tokenomicsAgent from '@/assets/designs/tokenomics-agent.png';
+import bayanProtocol from '@/assets/designs/bayan-protocol.png';
+import mikayShop from '@/assets/designs/mikay-shop.png';
+import cannaToken from '@/assets/designs/canna-token.png';
+import mergecore from '@/assets/designs/mergecore.png';
+import taxCoin from '@/assets/designs/tax-coin.png';
+
+type DesignCategory = 'book-cover' | 'brand-logo';
 
 const designs = [
   {
@@ -15,36 +26,105 @@ const designs = [
     subtitle: 'Series in Taxation — Quick Quick Reviewers',
     image: basicTaxation,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Legal Education'],
+    category: 'book-cover' as DesignCategory,
   },
   {
     title: 'The Tax Code',
     subtitle: 'Unmasked: Power, Secrets & Your Freedom',
     image: taxCode,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Cinematic'],
+    category: 'book-cover' as DesignCategory,
   },
   {
     title: "Equilibrium: Law's Duality",
     subtitle: 'Truth & Justice vs. Corruption & Deceit',
     image: lawsDuality,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Conceptual Art'],
+    category: 'book-cover' as DesignCategory,
   },
   {
     title: 'The Golden Judgement',
     subtitle: 'Commercial Law Reviewer — Volume 1',
     image: goldenJudgement,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Legal'],
+    category: 'book-cover' as DesignCategory,
   },
   {
     title: 'The Midnight Quill',
     subtitle: 'A Thriller of Shadows and Secrets',
     image: midnightQuill,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Fiction'],
+    category: 'book-cover' as DesignCategory,
   },
   {
     title: 'STOP',
     subtitle: 'Curiosity / Power / Success',
     image: stopPower,
     tags: ['Book Cover', 'AI Prompt Engineering', 'Bold Typography'],
+    category: 'book-cover' as DesignCategory,
+  },
+  {
+    title: "Janus' Crypto Sisig",
+    subtitle: 'Proof of Taste. Zero Gas Fees.',
+    image: cryptoSisig,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'Web3 × Food'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'CannaVendex',
+    subtitle: 'Cannabis Vending Intelligence Platform',
+    image: cannavendex,
+    tags: ['Brand Logo', 'AI Prompt Engineering', '3D Render'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'KGP Founding Member',
+    subtitle: 'Kom8ks.com — Philippine Heritage NFT',
+    image: kgpFounding,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'NFT Badge'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'Tokenomics AI Agent',
+    subtitle: 'Design tokenomics, generate safe contracts',
+    image: tokenomicsAgent,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'Web3 AI'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'BAYAN Protocol',
+    subtitle: 'Autonomous. Transparent. Quantum-Secure.',
+    image: bayanProtocol,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'Blockchain'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'Mikay Shop',
+    subtitle: 'E-commerce Brand Identity',
+    image: mikayShop,
+    tags: ['Brand Logo', 'AI Prompt Engineering', '3D Typography'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: '$CANNA Token',
+    subtitle: 'Cannabis DeFi Token Branding',
+    image: cannaToken,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'Crypto'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'MergeCore Protocol',
+    subtitle: 'Quantum-Safe State Channel Network',
+    image: mergecore,
+    tags: ['Brand Logo', 'AI Prompt Engineering', 'Protocol'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'TAX Coin',
+    subtitle: 'Blockchain-based Tax Infrastructure',
+    image: taxCoin,
+    tags: ['Brand Logo', 'AI Prompt Engineering', '3D Coin'],
+    category: 'brand-logo' as DesignCategory,
   },
 ];
 
