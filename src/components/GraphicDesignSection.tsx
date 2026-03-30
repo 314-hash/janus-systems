@@ -237,7 +237,7 @@ const GraphicDesignSection = () => {
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className={`relative overflow-hidden ${
-                  design.category === 'brand-logo' ? 'aspect-square' : 'aspect-[2/3]'
+                  design.category === 'brand-logo' || design.category === 'saas' ? 'aspect-square' : 'aspect-[2/3]'
                 }`}>
                   <img
                     src={design.image}
