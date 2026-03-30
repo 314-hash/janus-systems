@@ -18,6 +18,10 @@ import mikayShop from '@/assets/designs/mikay-shop.png';
 import cannaToken from '@/assets/designs/canna-token.png';
 import mergecore from '@/assets/designs/mergecore.png';
 import taxCoin from '@/assets/designs/tax-coin.png';
+import leadforgeAi from '@/assets/designs/leadforge-ai.png';
+import outreachflow from '@/assets/designs/outreachflow.png';
+import pipelinex from '@/assets/designs/pipelinex.png';
+import n8nAutopilot from '@/assets/designs/n8n-autopilot.png';
 
 type DesignCategory = 'book-cover' | 'brand-logo';
 
@@ -125,6 +129,34 @@ const designs = [
     subtitle: 'Blockchain-based Tax Infrastructure',
     image: taxCoin,
     tags: ['Brand Logo', 'AI Prompt Engineering', '3D Coin'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'LeadForge AI',
+    subtitle: 'AI-Powered Lead Generation Agent',
+    image: leadforgeAi,
+    tags: ['Brand Logo', 'SaaS', 'Lead Gen', 'AI Agent'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'OutreachFlow',
+    subtitle: 'Email Outreach Automation Platform',
+    image: outreachflow,
+    tags: ['Brand Logo', 'SaaS', 'n8n', 'Email Automation'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'PipelineX',
+    subtitle: 'AI Sales Pipeline Orchestrator',
+    image: pipelinex,
+    tags: ['Brand Logo', 'SaaS', 'AI Agent', 'Sales'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'n8n Autopilot',
+    subtitle: 'Workflow Automation Intelligence',
+    image: n8nAutopilot,
+    tags: ['Brand Logo', 'SaaS', 'n8n', 'Automation'],
     category: 'brand-logo' as DesignCategory,
   },
 ];
