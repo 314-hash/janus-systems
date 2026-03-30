@@ -23,7 +23,7 @@ import outreachflow from '@/assets/designs/outreachflow.png';
 import pipelinex from '@/assets/designs/pipelinex.png';
 import n8nAutopilot from '@/assets/designs/n8n-autopilot.png';
 
-type DesignCategory = 'book-cover' | 'brand-logo';
+type DesignCategory = 'book-cover' | 'brand-logo' | 'saas';
 
 const designs = [
   {
