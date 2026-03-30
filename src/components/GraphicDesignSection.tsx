@@ -18,6 +18,10 @@ import mikayShop from '@/assets/designs/mikay-shop.png';
 import cannaToken from '@/assets/designs/canna-token.png';
 import mergecore from '@/assets/designs/mergecore.png';
 import taxCoin from '@/assets/designs/tax-coin.png';
+import leadforgeAi from '@/assets/designs/leadforge-ai.png';
+import outreachflow from '@/assets/designs/outreachflow.png';
+import pipelinex from '@/assets/designs/pipelinex.png';
+import n8nAutopilot from '@/assets/designs/n8n-autopilot.png';
 
 type DesignCategory = 'book-cover' | 'brand-logo';
 
