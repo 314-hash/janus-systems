@@ -162,7 +162,7 @@ const designs = [
 ];
 
 const GraphicDesignSection = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'book-cover' | 'brand-logo'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'book-cover' | 'brand-logo' | 'saas'>('all');
 
   const filteredDesigns = activeTab === 'all' ? designs : designs.filter(d => d.category === activeTab);
 
