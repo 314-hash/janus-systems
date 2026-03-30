@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Palette, BookOpen, Crown } from 'lucide-react';
+import { Sparkles, Palette, BookOpen, Crown, Zap } from 'lucide-react';
 import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
 
 import basicTaxation from '@/assets/designs/basic-taxation.png';
