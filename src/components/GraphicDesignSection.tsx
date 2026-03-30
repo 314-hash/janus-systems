@@ -198,6 +198,7 @@ const GraphicDesignSection = () => {
             { key: 'all', label: 'All', icon: Sparkles },
             { key: 'book-cover', label: 'Book Covers', icon: BookOpen },
             { key: 'brand-logo', label: 'Brand Logos', icon: Crown },
+            { key: 'saas', label: 'SaaS & Automation', icon: Zap },
           ].map(({ key, label, icon: Icon }) => (
             <button
               key={key}
