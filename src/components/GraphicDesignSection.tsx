@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Sparkles, Palette, BookOpen, Crown } from 'lucide-react';
+import { Sparkles, Palette, BookOpen, Crown, Zap } from 'lucide-react';
 import { MotionSection, StaggerContainer, StaggerItem } from './ui/motion';
 
 import basicTaxation from '@/assets/designs/basic-taxation.png';
@@ -23,7 +23,7 @@ import outreachflow from '@/assets/designs/outreachflow.png';
 import pipelinex from '@/assets/designs/pipelinex.png';
 import n8nAutopilot from '@/assets/designs/n8n-autopilot.png';
 
-type DesignCategory = 'book-cover' | 'brand-logo';
+type DesignCategory = 'book-cover' | 'brand-logo' | 'saas';
 
 const designs = [
   {
@@ -135,34 +135,34 @@ const designs = [
     title: 'LeadForge AI',
     subtitle: 'AI-Powered Lead Generation Agent',
     image: leadforgeAi,
-    tags: ['Brand Logo', 'SaaS', 'Lead Gen', 'AI Agent'],
-    category: 'brand-logo' as DesignCategory,
+    tags: ['SaaS', 'Lead Gen', 'AI Agent'],
+    category: 'saas' as DesignCategory,
   },
   {
     title: 'OutreachFlow',
     subtitle: 'Email Outreach Automation Platform',
     image: outreachflow,
-    tags: ['Brand Logo', 'SaaS', 'n8n', 'Email Automation'],
-    category: 'brand-logo' as DesignCategory,
+    tags: ['SaaS', 'n8n', 'Email Automation'],
+    category: 'saas' as DesignCategory,
   },
   {
     title: 'PipelineX',
     subtitle: 'AI Sales Pipeline Orchestrator',
     image: pipelinex,
-    tags: ['Brand Logo', 'SaaS', 'AI Agent', 'Sales'],
-    category: 'brand-logo' as DesignCategory,
+    tags: ['SaaS', 'AI Agent', 'Sales'],
+    category: 'saas' as DesignCategory,
   },
   {
     title: 'n8n Autopilot',
     subtitle: 'Workflow Automation Intelligence',
     image: n8nAutopilot,
-    tags: ['Brand Logo', 'SaaS', 'n8n', 'Automation'],
-    category: 'brand-logo' as DesignCategory,
+    tags: ['SaaS', 'n8n', 'Automation'],
+    category: 'saas' as DesignCategory,
   },
 ];
 
 const GraphicDesignSection = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'book-cover' | 'brand-logo'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'book-cover' | 'brand-logo' | 'saas'>('all');
 
   const filteredDesigns = activeTab === 'all' ? designs : designs.filter(d => d.category === activeTab);
 
@@ -198,6 +198,7 @@ const GraphicDesignSection = () => {
             { key: 'all', label: 'All', icon: Sparkles },
             { key: 'book-cover', label: 'Book Covers', icon: BookOpen },
             { key: 'brand-logo', label: 'Brand Logos', icon: Crown },
+            { key: 'saas', label: 'SaaS & Automation', icon: Zap },
           ].map(({ key, label, icon: Icon }) => (
             <button
               key={key}
@@ -218,7 +219,7 @@ const GraphicDesignSection = () => {
         <StaggerContainer
           key={activeTab}
           className={`grid gap-5 md:gap-6 ${
-            activeTab === 'brand-logo'
+            activeTab === 'brand-logo' || activeTab === 'saas'
               ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
               : 'grid-cols-2 md:grid-cols-3'
           }`}
@@ -236,7 +237,7 @@ const GraphicDesignSection = () => {
                 transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className={`relative overflow-hidden ${
-                  design.category === 'brand-logo' ? 'aspect-square' : 'aspect-[2/3]'
+                  design.category === 'brand-logo' || design.category === 'saas' ? 'aspect-square' : 'aspect-[2/3]'
                 }`}>
                   <img
                     src={design.image}
