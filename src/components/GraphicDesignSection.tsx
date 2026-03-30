@@ -219,7 +219,7 @@ const GraphicDesignSection = () => {
         <StaggerContainer
           key={activeTab}
           className={`grid gap-5 md:gap-6 ${
-            activeTab === 'brand-logo'
+            activeTab === 'brand-logo' || activeTab === 'saas'
               ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4'
               : 'grid-cols-2 md:grid-cols-3'
           }`}
