@@ -131,6 +131,34 @@ const designs = [
     tags: ['Brand Logo', 'AI Prompt Engineering', '3D Coin'],
     category: 'brand-logo' as DesignCategory,
   },
+  {
+    title: 'LeadForge AI',
+    subtitle: 'AI-Powered Lead Generation Agent',
+    image: leadforgeAi,
+    tags: ['Brand Logo', 'SaaS', 'Lead Gen', 'AI Agent'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'OutreachFlow',
+    subtitle: 'Email Outreach Automation Platform',
+    image: outreachflow,
+    tags: ['Brand Logo', 'SaaS', 'n8n', 'Email Automation'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'PipelineX',
+    subtitle: 'AI Sales Pipeline Orchestrator',
+    image: pipelinex,
+    tags: ['Brand Logo', 'SaaS', 'AI Agent', 'Sales'],
+    category: 'brand-logo' as DesignCategory,
+  },
+  {
+    title: 'n8n Autopilot',
+    subtitle: 'Workflow Automation Intelligence',
+    image: n8nAutopilot,
+    tags: ['Brand Logo', 'SaaS', 'n8n', 'Automation'],
+    category: 'brand-logo' as DesignCategory,
+  },
 ];
 
 const GraphicDesignSection = () => {
