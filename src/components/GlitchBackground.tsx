@@ -18,7 +18,7 @@ const GlitchBackground = ({ opacity = 0.08, speed = 120 }: GlitchBackgroundProps
     ctx.fillRect(0, 0, width, height);
 
     // Generate random glitch rectangles
-    const numRects = Math.floor(Math.random() * 8) + 3;
+    const numRects = Math.floor(Math.random() * 5) + 2;
     
     for (let i = 0; i < numRects; i++) {
       const color = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
