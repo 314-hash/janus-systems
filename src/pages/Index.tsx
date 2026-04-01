@@ -3,6 +3,7 @@ import VignetteOverlay from '@/components/VignetteOverlay';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import IdentitySection from '@/components/IdentitySection';
+import BlockchainShowcase from '@/components/BlockchainShowcase';
 import ExecutionStack from '@/components/ExecutionStack';
 import FeaturedSystems from '@/components/FeaturedSystems';
 import AnimatedWebsites from '@/components/AnimatedWebsites';
@@ -16,22 +17,15 @@ import Footer from '@/components/Footer';
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background">
-      {/* Animated glitch background */}
-      <GlitchBackground opacity={0.12} speed={80} />
-      
-      {/* Vignette overlay for focus */}
+      <GlitchBackground opacity={0.08} speed={120} />
       <VignetteOverlay />
-      
-      {/* Scanline effect */}
-      <div className="fixed inset-0 pointer-events-none z-[2] scanlines opacity-30" />
 
-      {/* Navigation */}
       <Navigation />
 
-      {/* Main content */}
       <main>
         <HeroSection />
         <IdentitySection />
+        <BlockchainShowcase />
         <ExecutionStack />
         <FeaturedSystems />
         <AnimatedWebsites />
@@ -41,10 +35,7 @@ const Index = () => {
         <ContactSection />
       </main>
 
-      {/* Floating chatbot widget */}
       <ChatbotSection />
-
-      {/* Footer */}
       <Footer />
     </div>
   );
