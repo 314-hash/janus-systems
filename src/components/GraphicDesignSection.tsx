@@ -172,7 +172,7 @@ const GraphicDesignSection = () => {
         {/* Section header */}
         <MotionSection className="mb-10">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /05 Graphic Design & AI Prompt Engineering
+            /06 Graphic Design & AI Prompt Engineering
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Visual Creations

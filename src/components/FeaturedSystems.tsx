@@ -26,7 +26,7 @@ const FeaturedSystems = () => {
       <div className="section-container">
         <MotionSection className="mb-10">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /03 Featured Systems
+            /04 Featured Systems
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
             Infrastructure Built

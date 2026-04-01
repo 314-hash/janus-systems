@@ -17,7 +17,7 @@ const IdentitySection = () => {
           {/* Section header */}
           <MotionSection className="mb-12">
             <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-              /01 Identity
+            /01 Identity
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Founding CTO,<br />

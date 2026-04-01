@@ -50,7 +50,7 @@ const ContactSection = () => {
           {/* Section header */}
           <MotionSection className="text-center mb-16">
             <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-              /06 Let's Build
+              /09 Let's Build
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Ready to Build Real<br />

@@ -85,7 +85,7 @@ const ExecutionStack = () => {
         {/* Section header */}
         <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /02 Execution Stack
+            /03 Execution Stack
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             Technical Pillars

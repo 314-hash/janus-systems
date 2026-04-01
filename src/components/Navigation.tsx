@@ -14,10 +14,10 @@ const Navigation = () => {
 
   const navLinks = [
     { href: '#identity', label: 'Identity' },
-    { href: '#stack', label: 'Stack' },
+    { href: '#blockchain', label: 'Blockchain' },
     { href: '#systems', label: 'Systems' },
     { href: '#websites', label: 'Websites' },
-    { href: '#process', label: 'Process' },
+    { href: '#graphic-design', label: 'Designs' },
     { href: '#contact', label: 'Contact' },
   ];
 

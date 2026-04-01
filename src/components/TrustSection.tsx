@@ -32,7 +32,7 @@ const TrustSection = () => {
         {/* Section header */}
         <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /05 Working Style
+            /08 Working Style
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
             How I Operate
