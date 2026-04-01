@@ -47,8 +47,8 @@ const GlitchBackground = ({ opacity = 0.08, speed = 120 }: GlitchBackgroundProps
     const imageData = ctx.getImageData(0, 0, width, height);
     const data = imageData.data;
     
-    for (let i = 0; i < data.length; i += 4) {
-      if (Math.random() < 0.02) {
+    for (let i = 0; i < data.length; i += 16) {
+      if (Math.random() < 0.01) {
         const colorIndex = Math.floor(Math.random() * GLITCH_COLORS.length);
         const color = GLITCH_COLORS[colorIndex];
         const r = parseInt(color.slice(1, 3), 16);
