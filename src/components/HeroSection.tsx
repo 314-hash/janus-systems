@@ -1,10 +1,12 @@
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, ExternalLink, Shield, FileCode } from 'lucide-react';
 import { motion } from 'framer-motion';
 import profileImage from '@/assets/profile.png';
+import contractAnalysis from '@/assets/contract-analysis.png';
+import preAuditReport from '@/assets/pre-audit-report.png';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-start pt-24 md:pt-32 overflow-hidden pb-16">
       {/* Floating ambient orbs */}
       <motion.div
         className="absolute w-72 h-72 rounded-full bg-primary/5 blur-3xl"
@@ -47,7 +49,6 @@ const HeroSection = () => {
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              {/* Rotating ring */}
               <motion.div
                 className="absolute -inset-3 rounded-full border border-dashed border-primary/20 animate-rotate-slow"
               />
@@ -117,7 +118,6 @@ const HeroSection = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px -5px hsl(var(--primary) / 0.6)' }}
               whileTap={{ scale: 0.97 }}
             >
-              {/* Shine sweep */}
               <motion.div
                 className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-primary-foreground/20 to-transparent skew-x-12"
                 whileHover={{ translateX: '200%' }}
@@ -138,7 +138,7 @@ const HeroSection = () => {
 
           {/* Social links */}
           <motion.div 
-            className="flex items-center justify-center gap-6"
+            className="flex items-center justify-center gap-6 mb-16"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -165,6 +165,89 @@ const HeroSection = () => {
             </motion.a>
           </motion.div>
         </div>
+
+        {/* ── Featured Blockchain Project ── */}
+        <motion.div
+          className="max-w-6xl mx-auto"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.8 }}
+        >
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="h-px flex-1 max-w-[80px] bg-gradient-to-r from-transparent to-primary/40" />
+            <span className="text-xs font-mono uppercase tracking-widest text-primary">Featured Blockchain Project</span>
+            <div className="h-px flex-1 max-w-[80px] bg-gradient-to-l from-transparent to-primary/40" />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Left – LinkedIn embed + GitHub link */}
+            <motion.div
+              className="rounded-xl border border-border bg-card/60 backdrop-blur-md overflow-hidden"
+              whileHover={{ borderColor: 'hsl(var(--primary) / 0.4)' }}
+            >
+              <div className="p-4 border-b border-border flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Linkedin className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-semibold text-foreground">MemePi Token — Launch Post</span>
+                </div>
+                <a
+                  href="https://github.com/314-hash/MemePi-Token.github.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono text-primary hover:text-primary/80 transition-colors"
+                >
+                  <Github className="w-3.5 h-3.5" />
+                  Source Code
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+              <div className="flex justify-center bg-background/50 p-2">
+                <iframe
+                  src="https://www.linkedin.com/embed/feed/update/urn:li:share:7444509235977121792"
+                  height="500"
+                  width="100%"
+                  frameBorder="0"
+                  allowFullScreen
+                  title="MemePi Token LinkedIn post"
+                  className="max-w-[504px] rounded-lg"
+                />
+              </div>
+            </motion.div>
+
+            {/* Right – Audit images */}
+            <div className="flex flex-col gap-6">
+              <motion.div
+                className="rounded-xl border border-border bg-card/60 backdrop-blur-md overflow-hidden"
+                whileHover={{ borderColor: 'hsl(var(--primary) / 0.4)' }}
+              >
+                <div className="p-3 border-b border-border flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-secondary" />
+                  <span className="text-sm font-semibold text-foreground">Pre-Audit Security Report</span>
+                </div>
+                <img
+                  src={preAuditReport}
+                  alt="MemePi Token pre-audit security report showing 0 issues found"
+                  className="w-full object-cover"
+                />
+              </motion.div>
+
+              <motion.div
+                className="rounded-xl border border-border bg-card/60 backdrop-blur-md overflow-hidden"
+                whileHover={{ borderColor: 'hsl(var(--primary) / 0.4)' }}
+              >
+                <div className="p-3 border-b border-border flex items-center gap-2">
+                  <FileCode className="w-4 h-4 text-accent" />
+                  <span className="text-sm font-semibold text-foreground">Smart Contract Analysis</span>
+                </div>
+                <img
+                  src={contractAnalysis}
+                  alt="MemePi Token smart contract analysis and explainer"
+                  className="w-full object-cover max-h-[400px]"
+                />
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}
