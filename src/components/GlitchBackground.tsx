@@ -7,7 +7,7 @@ interface GlitchBackgroundProps {
 
 const GLITCH_COLORS = ['#d11560', '#61dca3', '#1ca1e3', '#580363', '#5b5406'];
 
-const GlitchBackground = ({ opacity = 0.15, speed = 50 }: GlitchBackgroundProps) => {
+const GlitchBackground = ({ opacity = 0.08, speed = 120 }: GlitchBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const lastUpdateRef = useRef<number>(0);
@@ -18,7 +18,7 @@ const GlitchBackground = ({ opacity = 0.15, speed = 50 }: GlitchBackgroundProps)
     ctx.fillRect(0, 0, width, height);
 
     // Generate random glitch rectangles
-    const numRects = Math.floor(Math.random() * 8) + 3;
+    const numRects = Math.floor(Math.random() * 5) + 2;
     
     for (let i = 0; i < numRects; i++) {
       const color = GLITCH_COLORS[Math.floor(Math.random() * GLITCH_COLORS.length)];
@@ -47,8 +47,8 @@ const GlitchBackground = ({ opacity = 0.15, speed = 50 }: GlitchBackgroundProps)
     const imageData = ctx.getImageData(0, 0, width, height);
     const data = imageData.data;
     
-    for (let i = 0; i < data.length; i += 4) {
-      if (Math.random() < 0.02) {
+    for (let i = 0; i < data.length; i += 16) {
+      if (Math.random() < 0.01) {
         const colorIndex = Math.floor(Math.random() * GLITCH_COLORS.length);
         const color = GLITCH_COLORS[colorIndex];
         const r = parseInt(color.slice(1, 3), 16);

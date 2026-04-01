@@ -34,8 +34,8 @@ const App = () => (
         <source src={exVideo} type="video/mp4" />
       </video>
 
-      {/* 🌑 Overlay for contrast */}
-      <div className="fixed inset-0 bg-black/50 -z-10" />
+      {/* Overlay for contrast */}
+      <div className="fixed inset-0 bg-background/60 -z-10" />
 
       <Toaster />
       <Sonner />

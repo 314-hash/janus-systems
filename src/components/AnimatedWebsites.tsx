@@ -93,7 +93,7 @@ const AnimatedWebsites = () => {
         {/* Section header */}
         <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /04 Animated Websites
+            /05 Animated Websites
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Websites Crafted

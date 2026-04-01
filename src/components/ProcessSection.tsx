@@ -41,7 +41,7 @@ const ProcessSection = () => {
         {/* Section header */}
         <MotionSection className="mb-16">
           <span className="inline-block text-xs font-mono text-primary uppercase tracking-widest mb-4">
-            /04 How I Build
+            /07 How I Build
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Systems Thinking
