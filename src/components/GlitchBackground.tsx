@@ -7,7 +7,7 @@ interface GlitchBackgroundProps {
 
 const GLITCH_COLORS = ['#d11560', '#61dca3', '#1ca1e3', '#580363', '#5b5406'];
 
-const GlitchBackground = ({ opacity = 0.15, speed = 50 }: GlitchBackgroundProps) => {
+const GlitchBackground = ({ opacity = 0.08, speed = 120 }: GlitchBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number>();
   const lastUpdateRef = useRef<number>(0);
